@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nursing Home Staff Insider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/modal.css">
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.png" alt="Nursing Home Staff Insider logo">
+      <div class="brand-title">
+        <strong>Nursing Home Staff Insider</strong>
+        <span>PBJ staffing metrics & facility profiling</span>
+      </div>
+    </div>
+
+    <nav>
+      <a class="nav-pill" href="#services">Services</a>
+      <a class="nav-pill" href="#data">Data</a>
+      <a class="nav-pill" href="#method">Method</a>
+      <a class="nav-pill" href="#disclaimers">Disclaimers</a>
+      <a class="nav-pill primary" href="#request">Request Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wrap">
+
+  <!-- TOP TEXT -->
+  <section class="top-section">
+    <h1>Nursing Home Staff Insider</h1>
+
+    <p>
+      Metrics-driven analysis of CMS Payroll-Based Journal staffing data for nursing homes —
+      including facilities offering rehabilitation services — integrated with ownership context
+      and inspection history.
+    </p>
+
+    <p>
+      Staffing levels are a primary driver of resident care quality. CMS Payroll-Based Journal (PBJ) data
+      provides the most detailed public view of nursing home staffing. We translate PBJ submissions into
+      defensible metrics such as HPPD (hours per patient day), trends, variability, and peer comparisons.
+      HPPD summarizes the number of staff hours provided per resident day.
+    </p>
+  </section>
+
+  <!-- SERVICES + DATA -->
+  <section class="grid-2" id="services">
+    <div class="card">
+      <h2>Services</h2>
+      <ul>
+        <li>Role-specific HPPD (hours per patient day) — RN, LPN, CNA, total nursing</li>
+        <li>Daily, quarterly, and multi-year trends</li>
+        <li>Weekend vs weekday staffing patterns</li>
+        <li>Peer benchmarking (facility, city, county, state)</li>
+      </ul>
+    </div>
+
+    <div class="card" id="data">
+      <h2>Data sources</h2>
+      <ul>
+        <li>CMS PBJ public release (nursing homes including rehab services)</li>
+        <li>Nursing home ownership and operator context</li>
+        <li>Inspection and survey history</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- METHOD + DISCLAIMERS -->
+  <section class="grid-2" id="method">
+    <div class="card">
+      <h2>Method</h2>
+      <p>
+        Metrics-first, reproducible processing with conservative interpretation. Designed for oversight
+        and operational insight — not expert testimony.
+      </p>
+    </div>
+
+    <div class="card" id="disclaimers">
+      <h2>Disclaimers</h2>
+      <p>
+        Analyses are based on public CMS datasets and related publicly available sources. You are responsible for independently confirming
+        the accuracy, completeness, timeliness, and applicability of any dataset and any results derived from it. Nursing Home Staff Insider does
+        not provide expert testimony, regulatory determinations, legal opinions, or advocacy services. Services are limited to objective data
+        processing, analysis, interpretation of publicly available information, and report generation.
+      </p>
+    </div>
+  </section>
+
+  <!-- REQUEST ANALYSIS (wide) -->
+  <section class="request-wrap" id="request">
+    <div class="request-card">
+      <h2>Request an Analysis</h2>
+      <p class="lead">
+        Tell us what you’re trying to answer (facility list, timeframe, and what comparisons matter).
+        This is a mockup form. Submitting will display a confirmation message (no email is sent yet).
+      </p>
+
+      <form id="contactForm">
+        <!-- SECTION 1: CONTACT INFO -->
+        <fieldset class="form-section">
+          <legend>Contact info</legend>
+
+          <div class="row2">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="org">Organization</label>
+              <input id="org" name="org" placeholder="Organization / team" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@domain.com" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="(000) 000-0000" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- SECTION 2: ANALYSIS REQUEST -->
+        <fieldset class="form-section">
+          <legend>Analysis request</legend>
+
+          <div class="row2">
+            <div>
+              <label for="date_start">Date range start</label>
+              <input id="date_start" name="date_start" type="date" />
+            </div>
+            <div>
+              <label for="date_end">Date range end</label>
+              <input id="date_end" name="date_end" type="date" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label for="geo_level">Geographic level (select all that apply)</label>
+              <select id="geo_level" name="geo_level" multiple size="4" aria-describedby="geo_help">
+                <option value="facility_only">Facility only</option>
+                <option value="vs_state">Versus peers in state</option>
+                <option value="vs_county">Versus peers in county</option>
+                <option value="vs_city">Versus peers in city</option>
+                
+                
+              </select>
+              
+            </div>
+
+            <div>
+              <label for="timeline">Turnaround Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="standard">Standard (~2 weeks)</option>
+                <option value="expedited">Expedited (~1 week, added fee)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label>HPPD Calcucations - Staff types (select all that apply)</label>
+            <div class="checkgrid" role="group" aria-label="Staff types">
+              <label class="checkline compact">
+                <input type="checkbox" name="staff_types" value="overall_nursing_staff">
+                <span>Overall nursing staff</span>
+              </label>
+              <label class="checkline compact">
+                <input type="checkbox" name="staff_types" value="rn">
+                <span>RN</span>
+              </label>
+              <label class="checkline compact">
+                <input type="checkbox" name="staff_types" value="lpn">
+                <span>LPN</span>
+              </label>
+              <label class="checkline compact">
+                <input type="checkbox" name="staff_types" value="aide">
+                <span>Aide / CNA</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkbox-card">
+            <div class="checkbox-card-header">Categorical Data</div>
+            <div class="checkbox-card-grid two" role="group" aria-label="Categorical data">
+              <label class="checkline">
+                <input type="checkbox" id="weekendWeekday" name="weekend_weekday" value="yes">
+                <span>Include Weekend vs. Weekday staffing analysis</span>
+              </label>
+
+              <label class="checkline">
+                <input type="checkbox" id="overallAgency" name="overall_agency" value="yes">
+                <span>Include Agency vs. Regular staff breakdown</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkbox-card">
+            <div class="checkbox-card-header">Compliance Reports</div>
+            <div class="checkbox-card-grid two" role="group" aria-label="Compliance reports">
+              <label class="checkline">
+                <input type="checkbox" id="federalRn8Hr" name="compliance_reports" value="federal_rn_8hr">
+                <span>Federal RN 8 Hour Requirements</span>
+              </label>
+
+              <label class="checkline">
+                <input type="checkbox" id="stateDailyHppd" name="compliance_reports" value="state_daily_hppd">
+                <span>State Daily HPPD Requirements</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="message">What do you want to learn / decide?</label>
+          <textarea id="message" name="message"
+            placeholder="Example: Compare Facility A vs peers from 2019–2024; include RN/LPN/CNA and total nursing; include weekend vs weekday; include agency staff; include ownership + inspection context."></textarea>
+        </div>
+
+        <!-- REQUIRED ACKNOWLEDGEMENT -->
+        <div class="checks">
+          <label class="checkline">
+            <input type="checkbox" id="acknowledgeTerms" required>
+            <span>
+              By continuing you acknowledge that: (1) all analyses are based on public CMS Payroll-Based Journal (PBJ) and related datasets and you are responsible for independently confirming their accuracy, completeness, timeliness, and applicability; and (2) Nursing Home Staff Insider does not provide expert testimony, regulatory determinations, legal opinions, or advocacy services, and only provides objective data processing, analysis, interpretation of publicly available information, and report generation.
+            </span>
+          </label>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn primary" type="submit">Send Request</button>
+          <button class="btn" type="button" id="copyEmailBtn">Copy Email Address</button>
+        </div>
+
+        <div class="hint" id="formHint"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- BOTTOM CONTACT (DISCREET, SMALL) -->
+  <footer>
+    <div>© <span id="year"></span> Nursing Home Staff Insider. All rights reserved.</div>
+
+    <div class="bottom-contact">
+      <div class="contact-pills">
+        <span class="pill">📧 <a href="mailto:info@nursinghomestaffinsider.com">info@nursinghomestaffinsider.com</a></span>
+        <span class="pill">📞 <a href="tel:+10000000000">(000) 000-0000</a></span>
+      </div>
+
+      <div class="footer-right">
+        <span>Data source: CMS PBJ public releases</span>
+        <span>Analytics only; no expert testimony</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
